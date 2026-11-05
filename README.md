@@ -1,3 +1,21 @@
+# PosseTTD
+
+**PosseTTD is a private, unofficial fork of [OpenTTD](https://www.openttd.org/) (version 15.3) made for a small group of friends.**
+It is NOT official OpenTTD, is not supported by the OpenTTD team, and is not network-compatible with official OpenTTD servers or clients:
+everybody in a multiplayer game must run the same PosseTTD build.
+
+PosseTTD is free software under the GNU General Public License version 2, exactly like OpenTTD. All original copyright and
+license notices are kept (see [COPYING.md](COPYING.md) and [CREDITS.md](CREDITS.md)). Many thanks to the OpenTTD developers
+and to Chris Sawyer, creator of Transport Tycoon Deluxe.
+
+- Changes made by this fork are listed in [CHANGELOG-POSSE.md](CHANGELOG-POSSE.md).
+- Portable Windows builds (with OpenGFX bundled, no setup needed) are on the Releases page. Unzip and run `openttd.exe`.
+- PosseTTD keeps its settings and savegames in `Documents\PosseTTD`, separate from any normal OpenTTD install.
+
+The rest of this file is the original OpenTTD readme.
+
+---
+
 # OpenTTD
 
 ## Table of contents
