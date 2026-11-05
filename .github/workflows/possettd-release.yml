@@ -16,6 +16,8 @@ permissions:
 
 env:
   OPENGFX_VERSION: "0.6.1"
+  OPENSFX_VERSION: "1.0.3"
+  OPENMSX_VERSION: "0.4.2"
 
 jobs:
   windows-x64:
@@ -71,12 +73,15 @@ jobs:
         GAMEDIR=$(dirname "$EXE")
         echo "Game folder: $GAMEDIR"
 
-        curl -fL "https://cdn.openttd.org/opengfx-releases/${OPENGFX_VERSION}/opengfx-${OPENGFX_VERSION}-all.zip" -o opengfx.zip
-        mkdir opengfx
-        unzip -q opengfx.zip -d opengfx
+        # Graphics (OpenGFX), sounds (OpenSFX) and music (OpenMSX). OpenTTD refuses to start
+        # without a sound set, so all three are bundled. Each zip holds one .tar that OpenTTD
+        # reads directly from the baseset folder.
         mkdir -p "$GAMEDIR/baseset"
-        # OpenTTD reads the OpenGFX .tar directly from the baseset folder.
-        cp opengfx/*.tar "$GAMEDIR/baseset/"
+        for pack in "opengfx-releases/${OPENGFX_VERSION}/opengfx-${OPENGFX_VERSION}"                     "opensfx-releases/${OPENSFX_VERSION}/opensfx-${OPENSFX_VERSION}"                     "openmsx-releases/${OPENMSX_VERSION}/openmsx-${OPENMSX_VERSION}"; do
+          curl -fL "https://cdn.openttd.org/${pack}-all.zip" -o pack.zip
+          rm -rf pack && mkdir pack && unzip -q pack.zip -d pack
+          cp pack/*.tar "$GAMEDIR/baseset/"
+        done
         ls -la "$GAMEDIR/baseset"
 
         # Name the final zip after the (git tag) version.

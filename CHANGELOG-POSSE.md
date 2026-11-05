@@ -11,5 +11,5 @@ Changes relative to upstream OpenTTD 15.3. Newest first.
 - Executable renamed to `possettd.exe`.
 - Settings and savegames now live in `Documents\PosseTTD` instead of `Documents\OpenTTD`.
 - Added GitHub Actions workflow `possettd-release.yml`: pushing a tag `v*` builds a Windows x64 portable zip
-  with OpenGFX bundled and attaches it to a GitHub Release. Upstream workflows moved to `.github/upstream-workflows/`
+  with OpenGFX, OpenSFX and OpenMSX bundled and attaches it to a GitHub Release. Upstream workflows moved to `.github/upstream-workflows/`
   (disabled) so they don't fail on this fork.

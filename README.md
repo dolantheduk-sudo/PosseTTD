@@ -9,7 +9,7 @@ license notices are kept (see [COPYING.md](COPYING.md) and [CREDITS.md](CREDITS.
 and to Chris Sawyer, creator of Transport Tycoon Deluxe.
 
 - Changes made by this fork are listed in [CHANGELOG-POSSE.md](CHANGELOG-POSSE.md).
-- Portable Windows builds (with OpenGFX bundled, no setup needed) are on the Releases page. Unzip and run `possettd.exe`.
+- Portable Windows builds (with OpenGFX, OpenSFX and OpenMSX bundled, no setup needed) are on the Releases page. Unzip and run `possettd.exe`.
 - PosseTTD keeps its settings and savegames in `Documents\PosseTTD`, separate from any normal OpenTTD install.
 
 The rest of this file is the original OpenTTD readme.

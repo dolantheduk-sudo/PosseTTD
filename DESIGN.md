@@ -185,7 +185,7 @@ Strings go in `src/lang/english.txt`. Rule: new strings are appended in a clearl
 Done (branch `phase0-setup`):
 - Forked 15.3. Rebranded window title, main-menu version label, About window, exe properties, package name, personal directory (`Documents\PosseTTD`), README notice. Original copyright/licence files untouched.
 - Version string = git tag (e.g. `v0.1.0`), so a PosseTTD client can never match an official server's version string (network protocol compares it).
-- Upstream CI workflows moved to `.github/upstream-workflows/` (they'd fail on a fork: they need OpenTTD's secrets). New `.github/workflows/possettd-release.yml`: tag `v*` -> Windows x64 build via vcpkg+MSVC -> CPack zip -> OpenGFX 0.6.1 added in `baseset/` -> GitHub Release.
+- Upstream CI workflows moved to `.github/upstream-workflows/` (they'd fail on a fork: they need OpenTTD's secrets). New `.github/workflows/possettd-release.yml`: tag `v*` -> Windows x64 build via vcpkg+MSVC -> CPack zip -> OpenGFX 0.6.1, OpenSFX 1.0.3 and OpenMSX 0.4.2 added in `baseset/` -> GitHub Release.
 
 **Not yet done / needs you:**
 1. **Local build is impossible right now:** this PC has Visual Studio 2022 Community but **no C++ workload**, plus no CMake/Ninja/vcpkg/`gh`. Options: (a) I walk you through installing "Desktop development with C++" (~6-8 GB, needs admin, then CMake + vcpkg), enabling local testing; or (b) build only on GitHub Actions (slow loop: push, wait ~20-40 min per build, download zip). **I recommend (a)**, because Phase 4-style work with only a cloud build is painful.
