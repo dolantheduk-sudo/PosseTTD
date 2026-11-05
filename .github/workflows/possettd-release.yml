@@ -67,7 +67,7 @@ jobs:
         cd work
         unzip -q ../build/bundles/possettd-*-windows-*.zip -d unpacked
         # The zip contains one top-level folder; find it via the exe.
-        EXE=$(find unpacked -name openttd.exe | head -n 1)
+        EXE=$(find unpacked -name possettd.exe | head -n 1)
         GAMEDIR=$(dirname "$EXE")
         echo "Game folder: $GAMEDIR"
 

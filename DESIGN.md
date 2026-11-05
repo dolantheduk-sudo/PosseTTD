@@ -191,7 +191,7 @@ Done (branch `phase0-setup`):
 1. **Local build is impossible right now:** this PC has Visual Studio 2022 Community but **no C++ workload**, plus no CMake/Ninja/vcpkg/`gh`. Options: (a) I walk you through installing "Desktop development with C++" (~6-8 GB, needs admin, then CMake + vcpkg), enabling local testing; or (b) build only on GitHub Actions (slow loop: push, wait ~20-40 min per build, download zip). **I recommend (a)**, because Phase 4-style work with only a cloud build is painful.
 2. **The workflow is untested** until it runs on GitHub. It needs the repo pushed to your GitHub account. I haven't pushed anything or created any repo (that's outward-facing, your call).
 3. **Project name:** your brief had a `[YOUR NAME HERE]` placeholder; I used **PosseTTD** from the folder name. One search-and-replace if you want another.
-4. The exe is still called `openttd.exe` inside the zip (renaming touches many build files). Window title/version make it unmistakable; say if you want the rename.
+4. (Done) The executable is now `possettd.exe` (`BINARY_NAME` in the root CMakeLists.txt; the CMake target is still `openttd`).
 5. "Confirm vanilla multiplayer works with the rebranded build" is **not verified** yet; it needs a built exe.
 
 ## 10. Feasibility notes / where I'd simplify (per your "propose simpler" rule)

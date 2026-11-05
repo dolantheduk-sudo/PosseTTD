@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.17)
 
 if(NOT BINARY_NAME)
-    set(BINARY_NAME openttd)
+    set(BINARY_NAME possettd) # PosseTTD: renamed executable (possettd.exe)
 endif()
 
 project(${BINARY_NAME}
