@@ -5,7 +5,7 @@ $ErrorActionPreference = 'Stop'
 $repo = Resolve-Path (Join-Path $PSScriptRoot '..\..')
 $env:Path = [Environment]::GetEnvironmentVariable('Path','User') + ';' + [Environment]::GetEnvironmentVariable('Path','Machine')
 $packs = @(
-    'opengfx-releases/0.6.1/opengfx-0.6.1',
+    'opengfx-releases/8.0/opengfx-8.0',
     'opensfx-releases/1.0.3/opensfx-1.0.3',
     'openmsx-releases/0.4.2/openmsx-0.4.2'
 )

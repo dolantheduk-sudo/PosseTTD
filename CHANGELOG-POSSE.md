@@ -5,7 +5,7 @@ Changes relative to upstream OpenTTD 15.3. Newest first.
 ## Unreleased
 
 ### Phase 1, step 1: territory overlay in the main view (client-side, display only)
-- New files in `src/possettd/` (`territory.cpp/.h`). Press **T** to toggle the overlay.
+- New files in `src/possettd/` (`territory.cpp/.h`). Press **Y** to toggle the overlay.
 - Territory = station catchment areas weighted by the rating of cargo actually being served. Strongest company wins each tile; close runner-ups make the tile contested (striped). Borders drawn where territory changes.
 - Recalculated every few game days on each client (never every frame); never saved, never networked, so it cannot desync.
 - New client settings (Settings > Interface > General): overlay on/off, refresh interval, contested threshold.

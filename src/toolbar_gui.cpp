@@ -2154,7 +2154,7 @@ struct MainToolbarWindow : Window {
 		Hotkey(0, "giant_screenshot", MTHK_GIANT_SCREENSHOT),
 		Hotkey(WKC_CTRL | WKC_ALT | 'C', "cheats", MTHK_CHEATS),
 		Hotkey('L', "terraform", MTHK_TERRAFORM),
-		Hotkey('T', "territory", MTHK_TERRITORY), // PosseTTD
+		Hotkey('Y', "territory", MTHK_TERRITORY), // PosseTTD
 		Hotkey('V', "extra_viewport", MTHK_EXTRA_VIEWPORT),
 		Hotkey(0, "client_list", MTHK_CLIENT_LIST),
 		Hotkey(0, "sign_list", MTHK_SIGN_LIST),

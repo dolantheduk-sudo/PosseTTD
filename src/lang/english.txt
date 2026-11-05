@@ -5979,7 +5979,7 @@ STR_BADGE_FILTER_IS_LABEL                                       :{STRING} is {ST
 
 # PosseTTD strings (kept together at the end of the file to keep upstream merges clean)
 STR_CONFIG_SETTING_POSSE_TERRITORY                              :Show company territory overlay: {STRING2}
-STR_CONFIG_SETTING_POSSE_TERRITORY_HELPTEXT                     :Shade and outline the area each company controls through its stations, in the company colour. Contested areas are striped. Display only; it never changes the game. Hotkey: T
+STR_CONFIG_SETTING_POSSE_TERRITORY_HELPTEXT                     :Shade and outline the area each company controls through its stations, in the company colour. Contested areas are striped. Display only; it never changes the game. Hotkey: Y
 STR_CONFIG_SETTING_POSSE_TERRITORY_RECALC                       :Territory overlay refresh interval: {STRING2}
 STR_CONFIG_SETTING_POSSE_TERRITORY_RECALC_HELPTEXT              :How often the territory overlay is recalculated. Lower values update faster but use more processing power
 STR_CONFIG_SETTING_POSSE_TERRITORY_CONTEST                      :Territory overlay contested threshold: {STRING2}
