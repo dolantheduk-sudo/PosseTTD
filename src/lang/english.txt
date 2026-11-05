@@ -541,7 +541,7 @@ STR_ABOUT_MENU_TOGGLE_CONSOLE                                   :Toggle console
 STR_ABOUT_MENU_AI_DEBUG                                         :AI/Game script debug
 STR_ABOUT_MENU_SCREENSHOT                                       :Screenshot
 STR_ABOUT_MENU_SHOW_FRAMERATE                                   :Show frame rate
-STR_ABOUT_MENU_ABOUT_OPENTTD                                    :About 'OpenTTD'
+STR_ABOUT_MENU_ABOUT_OPENTTD                                    :About 'PosseTTD'
 STR_ABOUT_MENU_SPRITE_ALIGNER                                   :Sprite aligner
 STR_ABOUT_MENU_TOGGLE_BOUNDING_BOXES                            :Toggle bounding boxes
 STR_ABOUT_MENU_TOGGLE_DIRTY_BLOCKS                              :Toggle colouring of dirty blocks
@@ -2223,8 +2223,8 @@ STR_VIDEO_DRIVER_ERROR_NO_HARDWARE_ACCELERATION                 :{WHITE}... no c
 STR_VIDEO_DRIVER_ERROR_HARDWARE_ACCELERATION_CRASH              :{WHITE}... GPU driver crashed the game. Hardware acceleration disabled
 
 # Intro window
-STR_INTRO_CAPTION                                               :{WHITE}OpenTTD
-STR_INTRO_VERSION                                               :OpenTTD {REV}
+STR_INTRO_CAPTION                                               :{WHITE}PosseTTD
+STR_INTRO_VERSION                                               :PosseTTD {REV} (fork of OpenTTD)
 
 STR_INTRO_NEW_GAME                                              :{BLACK}New Game
 STR_INTRO_LOAD_GAME                                             :{BLACK}Load Game
@@ -3262,7 +3262,7 @@ STR_LAI_OBJECT_DESCRIPTION_COMPANY_HEADQUARTERS                 :Company headqua
 STR_LAI_OBJECT_DESCRIPTION_COMPANY_OWNED_LAND                   :Company-owned land
 
 # About OpenTTD window
-STR_ABOUT_OPENTTD                                               :{WHITE}About OpenTTD
+STR_ABOUT_OPENTTD                                               :{WHITE}About PosseTTD (based on OpenTTD)
 STR_ABOUT_ORIGINAL_COPYRIGHT                                    :{BLACK}Original copyright {COPYRIGHT} 1995 Chris Sawyer, All rights reserved
 STR_ABOUT_VERSION                                               :{BLACK}OpenTTD version {REV}
 STR_ABOUT_COPYRIGHT_OPENTTD                                     :{BLACK}OpenTTD {COPYRIGHT} 2002-{RAW_STRING} The OpenTTD team

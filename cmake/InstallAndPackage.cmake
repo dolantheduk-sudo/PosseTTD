@@ -131,7 +131,7 @@ endif()
 
 set(CPACK_SYSTEM_NAME "${ARCHITECTURE}")
 
-set(CPACK_PACKAGE_NAME "openttd")
+set(CPACK_PACKAGE_NAME "possettd") # PosseTTD
 set(CPACK_PACKAGE_VENDOR "OpenTTD")
 set(CPACK_PACKAGE_DESCRIPTION "OpenTTD")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "OpenTTD")
@@ -171,7 +171,7 @@ elseif(WIN32)
         include(PackageNSIS)
     endif()
 
-    set(CPACK_PACKAGE_FILE_NAME "openttd-#CPACK_PACKAGE_VERSION#-windows-${CPACK_SYSTEM_NAME}")
+    set(CPACK_PACKAGE_FILE_NAME "possettd-#CPACK_PACKAGE_VERSION#-windows-${CPACK_SYSTEM_NAME}")
 
     if(DEFINED ENV{AZURE_CODESIGN_PROFILE_NAME})
       add_custom_command(TARGET openttd

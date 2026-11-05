@@ -1,0 +1,100 @@
+name: PosseTTD Release (Windows x64)
+
+# Builds a portable Windows x64 zip (game + OpenGFX, zero setup) and attaches it
+# to a GitHub Release.
+#   - Push a tag like  v0.1.0  -> builds and publishes a Release.
+#   - "Run workflow" button   -> builds only, zip is available as a build artifact.
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  OPENGFX_VERSION: "0.6.1"
+
+jobs:
+  windows-x64:
+    name: Windows x64 portable zip
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout (full history so the git tag becomes the version string)
+      uses: actions/checkout@v6
+      with:
+        fetch-depth: 0
+
+    - name: Setup vcpkg
+      id: vcpkg
+      uses: OpenTTD/actions/setup-vcpkg@v6
+
+    - name: Install MSVC problem matcher
+      uses: ammaraskar/msvc-problem-matcher@master
+
+    - name: Configure developer command prompt
+      uses: ilammy/msvc-dev-cmd@v1
+      with:
+        arch: x64
+
+    - name: Build
+      shell: bash
+      run: |
+        mkdir build
+        cd build
+        cmake .. \
+          -GNinja \
+          -DVCPKG_TARGET_TRIPLET=x64-windows-static \
+          -DCMAKE_TOOLCHAIN_FILE="${{ steps.vcpkg.outputs.vcpkg-cmake }}" \
+          -DCMAKE_BUILD_TYPE=Release
+        cmake --build . --target openttd
+
+    - name: Package base zip with CPack
+      shell: bash
+      run: |
+        cd build
+        cpack -G ZIP
+        ls -la bundles
+
+    - name: Add OpenGFX and repack as portable zip
+      shell: bash
+      run: |
+        set -e
+        mkdir -p work/unpacked
+        cd work
+        unzip -q ../build/bundles/possettd-*-windows-*.zip -d unpacked
+        # The zip contains one top-level folder; find it via the exe.
+        EXE=$(find unpacked -name openttd.exe | head -n 1)
+        GAMEDIR=$(dirname "$EXE")
+        echo "Game folder: $GAMEDIR"
+
+        curl -fL "https://cdn.openttd.org/opengfx-releases/${OPENGFX_VERSION}/opengfx-${OPENGFX_VERSION}-all.zip" -o opengfx.zip
+        mkdir opengfx
+        unzip -q opengfx.zip -d opengfx
+        mkdir -p "$GAMEDIR/baseset"
+        # OpenTTD reads the OpenGFX .tar directly from the baseset folder.
+        cp opengfx/*.tar "$GAMEDIR/baseset/"
+        ls -la "$GAMEDIR/baseset"
+
+        # Name the final zip after the (git tag) version.
+        VERSION="${GITHUB_REF_NAME}"
+        OUT="possettd-${VERSION}-windows-x64-portable.zip"
+        cd "$(dirname "$GAMEDIR")"
+        7z a -tzip "${GITHUB_WORKSPACE}/${OUT}" "$(basename "$GAMEDIR")"
+        echo "ZIP_NAME=${OUT}" >> "$GITHUB_ENV"
+
+    - name: Upload zip as workflow artifact
+      uses: actions/upload-artifact@v5
+      with:
+        name: ${{ env.ZIP_NAME }}
+        path: ${{ env.ZIP_NAME }}
+
+    - name: Publish GitHub Release
+      if: startsWith(github.ref, 'refs/tags/v')
+      uses: softprops/action-gh-release@v2
+      with:
+        files: ${{ env.ZIP_NAME }}
+        generate_release_notes: true
