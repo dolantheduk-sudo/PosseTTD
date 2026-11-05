@@ -73,6 +73,8 @@
 
 #include "dropdown_common_type.h"
 
+#include "possettd/territory.h" // PosseTTD
+
 #include "safeguards.h"
 
 
@@ -2060,6 +2062,7 @@ struct MainToolbarWindow : Window {
 			case MTHK_GIANT_SCREENSHOT: MakeScreenshotWithConfirm(SC_WORLD); break;
 			case MTHK_CHEATS: if (!_networking) ShowCheatWindow(); break;
 			case MTHK_TERRAFORM: ShowTerraformToolbar(); break;
+			case MTHK_TERRITORY: ToggleTerritoryOverlay(); break; // PosseTTD
 			case MTHK_EXTRA_VIEWPORT: ShowExtraViewportWindowForTileUnderCursor(); break;
 			case MTHK_CLIENT_LIST: if (_networking) ShowClientList(); break;
 			case MTHK_SIGN_LIST: ShowSignList(); break;
@@ -2151,6 +2154,7 @@ struct MainToolbarWindow : Window {
 		Hotkey(0, "giant_screenshot", MTHK_GIANT_SCREENSHOT),
 		Hotkey(WKC_CTRL | WKC_ALT | 'C', "cheats", MTHK_CHEATS),
 		Hotkey('L', "terraform", MTHK_TERRAFORM),
+		Hotkey('T', "territory", MTHK_TERRITORY), // PosseTTD
 		Hotkey('V', "extra_viewport", MTHK_EXTRA_VIEWPORT),
 		Hotkey(0, "client_list", MTHK_CLIENT_LIST),
 		Hotkey(0, "sign_list", MTHK_SIGN_LIST),

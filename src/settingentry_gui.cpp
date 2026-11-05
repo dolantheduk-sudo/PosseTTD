@@ -665,6 +665,9 @@ SettingsContainer &GetSettingsTree()
 			{
 				general->Add(new SettingEntry("gui.osk_activation"));
 				general->Add(new SettingEntry("gui.hover_delay_ms"));
+				general->Add(new SettingEntry("gui.posse_territory_enabled")); // PosseTTD
+				general->Add(new SettingEntry("gui.posse_territory_recalc_days")); // PosseTTD
+				general->Add(new SettingEntry("gui.posse_territory_contest_pct")); // PosseTTD
 				general->Add(new SettingEntry("gui.errmsg_duration"));
 				general->Add(new SettingEntry("gui.window_snap_radius"));
 				general->Add(new SettingEntry("gui.window_soft_limit"));

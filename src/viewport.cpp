@@ -99,6 +99,8 @@
 #include "table/strings.h"
 #include "table/string_colours.h"
 
+#include "possettd/territory.h" // PosseTTD
+
 #include "safeguards.h"
 
 Point _tile_fract_coords;
@@ -1859,6 +1861,13 @@ void ViewportDoDraw(const Viewport &vp, int left, int top, int right, int bottom
 		dp.left = x;
 		dp.top = y;
 		vp.overlay->Draw(&dp);
+	}
+
+	/* PosseTTD: territory overlay (display only). Same coordinate convention as the link graph overlay above. */
+	if (IsTerritoryOverlayEnabled()) {
+		dp.left = x;
+		dp.top = y;
+		DrawTerritoryOverlay(vp, &dp);
 	}
 
 	if (!_vd.string_sprites_to_draw.empty()) {

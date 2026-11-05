@@ -5976,3 +5976,13 @@ STR_BADGE_CONFIG_PREVIEW                                        :Preview Image
 STR_BADGE_CONFIG_NAME                                           :Name
 STR_BADGE_FILTER_ANY_LABEL                                      :Any {STRING}
 STR_BADGE_FILTER_IS_LABEL                                       :{STRING} is {STRING}
+
+# PosseTTD strings (kept together at the end of the file to keep upstream merges clean)
+STR_CONFIG_SETTING_POSSE_TERRITORY                              :Show company territory overlay: {STRING2}
+STR_CONFIG_SETTING_POSSE_TERRITORY_HELPTEXT                     :Shade and outline the area each company controls through its stations, in the company colour. Contested areas are striped. Display only; it never changes the game. Hotkey: T
+STR_CONFIG_SETTING_POSSE_TERRITORY_RECALC                       :Territory overlay refresh interval: {STRING2}
+STR_CONFIG_SETTING_POSSE_TERRITORY_RECALC_HELPTEXT              :How often the territory overlay is recalculated. Lower values update faster but use more processing power
+STR_CONFIG_SETTING_POSSE_TERRITORY_CONTEST                      :Territory overlay contested threshold: {STRING2}
+STR_CONFIG_SETTING_POSSE_TERRITORY_CONTEST_HELPTEXT             :A tile is shown as contested (striped) when the second strongest company has at least this percentage of the strongest company influence
+STR_CONFIG_SETTING_POSSE_DAYS_VALUE                             :{COMMA} day{P 0 "" s}
+STR_CONFIG_SETTING_POSSE_PERCENT_VALUE                          :{COMMA}%

@@ -167,6 +167,9 @@ struct GUISettings {
 	bool   vehicle_income_warn;              ///< if a vehicle isn't generating income, show a warning
 	bool   old_vehicle_warn;                 ///< if a vehicle is getting old, show a warning
 	bool   show_finances;                    ///< show finances at end of year
+	bool   posse_territory_enabled;          ///< PosseTTD: show the territory overlay
+	uint8_t posse_territory_recalc_days;     ///< PosseTTD: recalculate territory every this many days
+	uint8_t posse_territory_contest_pct;     ///< PosseTTD: runner-up needs this percentage of the winner influence for a tile to count as contested
 	bool   sg_new_nonstop;                   ///< ttdpatch compatible nonstop handling read from pre v93 savegames
 	bool   new_nonstop;                      ///< ttdpatch compatible nonstop handling
 	OrderStopLocation stop_location; ///< what is the default stop location of trains?
