@@ -16,7 +16,7 @@ This is written for a non-C++ reader, so each section starts with the plain-lang
 | Savegames | PosseTTD data lives in its **own savegame chunk** with its own version number (§2). |
 | Settings | New `.ini` entries in `table/settings/` (§3). |
 | Upstream-friendly | New code in `src/possettd/` (new folder, new files). Existing files get 1-5 line hooks marked `// PosseTTD:`. |
-| No desyncs | Per-phase two-client test + `-d desync=1` logging (§8). |
+| No desyncs | Per-phase two-client test + `-d desync=2` checking (§8). |
 
 New code folder: **`src/possettd/`** with its own `CMakeLists.txt` added by one line to `src/CMakeLists.txt`.
 
