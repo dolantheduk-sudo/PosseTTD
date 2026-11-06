@@ -22,7 +22,9 @@ Pop-Location
 $zip = Get-ChildItem (Join-Path $build 'bundles') -Filter 'possettd-*.zip' | Select-Object -First 1
 Expand-Archive $zip.FullName -DestinationPath $run
 $exe = Get-ChildItem $run -Recurse -Filter possettd.exe | Select-Object -First 1
-$game = $exe.DirectoryName
+# Give the folder a fixed name so it is always the same place to launch from.
+Rename-Item $exe.DirectoryName "PosseTTD"
+$game = Join-Path $run "PosseTTD"
 
 foreach ($p in $packs) {
     $name = Split-Path $p -Leaf
